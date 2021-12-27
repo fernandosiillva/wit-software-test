@@ -1,6 +1,7 @@
 package com.witsoftware.apioperation.config;
 
 import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,8 +31,8 @@ public class RabbitMQConfigSender {
         return new DirectExchange(directExchangeName);
     }
 	
-    public Object sendAndReturn(String message) { 
-    	log.info("Send message");
+    public Object sendAndReturn(Message message) { 
+    	log.info("Send message...");
     	return template.convertSendAndReceive(exchange.getName(), routingKey, message);
     }
 }

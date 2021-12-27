@@ -17,7 +17,7 @@ public class OperationService {
 
 	private RabbitMQConfigSender configSender;
 	
-	public Result sender(Operation operation) {
-		return new Result(new BigDecimal(configSender.sendAndReturn(Utils.convertOperationToString(operation)).toString()));
+	public Result sender(Operation operation, String uuid) {
+		return new Result(new BigDecimal(configSender.sendAndReturn(Utils.createMessage(operation, uuid)).toString()));
 	}
 }

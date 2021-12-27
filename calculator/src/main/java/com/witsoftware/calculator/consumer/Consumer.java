@@ -2,6 +2,8 @@ package com.witsoftware.calculator.consumer;
 
 import java.math.BigDecimal;
 
+import org.slf4j.MDC;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
@@ -20,8 +22,13 @@ public class Consumer {
 	CalculatorService calculatorService;
 	
 	@RabbitListener(queues = RabbitMQConfigReceiver.queueName)
-	public BigDecimal consumer (String message) {
+	public BigDecimal consumer (Message message) {
+		MDC.put("uuid", message.getMessageProperties().getHeader("Unique-Identifier").toString());
 		log.info("Receiving message");
-		return calculatorService.typeOperation(Utils.convertStringToOperation(message));
+		try {
+			return calculatorService.typeOperation(Utils.convertStringToOperation(new String(message.getBody(), "UTF-8")));
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
 	}
 }
