@@ -1,0 +1,40 @@
+version: "3.2"
+services:
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    container_name: 'rabbitmq'
+    ports:
+        - 5672:5672
+        - 15672:15672   
+    networks:
+        - wit_software_net
+
+  api-operation:
+    build: 
+      dockerfile: Dockerfile
+      context: api-operation
+    image: api-operation:latest
+    container_name: 'api-operation'
+    ports:
+        - 8080:8080    
+    networks:
+        - wit_software_net
+    depends_on: 
+      - "rabbitmq"
+
+  calculator:
+    build: 
+      dockerfile: Dockerfile
+      context: calculator
+    image: calculator:latest
+    container_name: 'calculator'
+    ports:
+        - 8081:8081
+    networks:
+        - wit_software_net
+    depends_on: 
+      - "rabbitmq"
+
+networks:
+  wit_software_net:
+    driver: bridge
