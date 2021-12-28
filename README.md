@@ -1,2 +1,2 @@
 # wit-software-test
-Calculator test
+## Calculator test project
