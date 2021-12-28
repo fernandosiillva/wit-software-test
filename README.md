@@ -31,8 +31,8 @@ $ cd ..
 # Execute as aplicações utilizando o docker-compose
 $ docker-compose up --build
 
-# O servidor inciará na porta:8080 - execute o curl abaixo para teste
+# O servidor inciará na porta:8080 - execute o curl abaixo para teste em outro terminal/cmd
 $ curl -H "Content-Type: application/json" -X GET "http://localhost:8080/sum?a=1&b=3"
 ```
 
-Para saber mais sobre os path's da api, acesse a doc [Swagger](http://localhost:8080/swagger-ui.html).
+Para saber mais sobre a api, acesse a doc [Swagger](http://localhost:8080/swagger-ui.html).
