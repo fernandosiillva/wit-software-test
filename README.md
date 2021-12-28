@@ -1,7 +1,7 @@
 # Calculator test project
 ### Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Docker](https://www.docker.com/), [Java 11](https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html).
+[Git](https://git-scm.com), [Docker](https://www.docker.com/), [Java 11](https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html), [Maven](https://maven.apache.org/).
 
 ```bash
 # Clone este repositório
@@ -14,7 +14,7 @@ $ cd wit-software-test
 $ cd api-operation
 
 # Instale as dependências
-$ mvnw clean package
+$ mvn clean package
 
 # Volte para a pasta wit-software-test
 $ cd ..
@@ -23,7 +23,7 @@ $ cd ..
 $ cd calculator
 
 # Instale as dependências
-$ mvnw clean package
+$ mvn clean package
 
 # Volte para a pasta wit-software-test
 $ cd ..
