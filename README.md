@@ -35,4 +35,4 @@ $ docker-compose up --build
 $ curl -H "Content-Type: application/json" -X GET "http://localhost:8080/sum?a=1&b=3"
 ```
 
-Para saber mais sobre os path's da api, acesse a doc [Swagger](http://localhost:8080/swagger-ui.html).
+Para saber mais sobre a api, acesse a doc [Swagger](http://localhost:8080/swagger-ui.html).
