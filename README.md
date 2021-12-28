@@ -36,3 +36,4 @@ $ curl -H "Content-Type: application/json" -X GET "http://localhost:8080/sum?a=1
 ```
 
 Para saber mais sobre a api, acesse a doc [Swagger](http://localhost:8080/swagger-ui.html).
+Se preferir usar o [Postman](https://www.postman.com/) disponibilizei a collection na pasta postman.
