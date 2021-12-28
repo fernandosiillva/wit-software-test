@@ -5,7 +5,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone git@github.com:fernandosiillva/wit-software-test.git
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd wit-software-test
